@@ -12,7 +12,7 @@
   },
   "api": {
     "type": "openapi",
-    "url": "https://yourdomain.com/openapi.json",
+    "url": "https://github.com/jodypaterson/Phlux_AlphaVantage/blob/main/OpenAPI_Plugin_SpecificationV1.json",
     "is_user_authenticated": true
   },
   "logo_url": "https://yourdomain.com/logo.png",
