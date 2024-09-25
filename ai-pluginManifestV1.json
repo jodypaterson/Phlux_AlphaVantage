@@ -1,0 +1,21 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Alpha Vantage Forex Data",
+  "name_for_model": "alpha_vantage_forex",
+  "description_for_human": "Fetch real-time and historical forex data for multiple timeframes (D1, H4, H1, M15, M5, and M1).",
+  "description_for_model": "Use this plugin to fetch real-time and historical forex price data across different timeframes, such as D1, H4, H1, M15, M5, and M1.",
+  "auth": {
+    "type": "apikey",
+    "authorization_url": "https://www.alphavantage.co/support/#api-key",
+    "apikey_url": "https://www.alphavantage.co/support/#api-key",
+    "validation_url": "https://www.alphavantage.co/query?function=FX_INTRADAY&from_symbol=EUR&to_symbol=USD&interval=1min&apikey=ZR9AS5R2Q8JFGU9V"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://yourdomain.com/openapi.json",
+    "is_user_authenticated": true
+  },
+  "logo_url": "https://yourdomain.com/logo.png",
+  "contact_email": "support@yourdomain.com",
+  "legal_info_url": "https://yourdomain.com/legal"
+}

@@ -1,0 +1,121 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Alpha Vantage Forex Data API",
+    "version": "1.0.0",
+    "description": "This API allows fetching real-time and historical forex price data for various timeframes, including D1, H4, H1, M15, M5, and M1."
+  },
+  "servers": [
+    {
+      "url": "https://www.alphavantage.co"
+    }
+  ],
+  "paths": {
+    "/query": {
+      "get": {
+        "summary": "Fetch Forex Data",
+        "description": "Fetch forex price data at specified timeframes using the Alpha Vantage API.",
+        "parameters": [
+          {
+            "name": "function",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "FX_INTRADAY"
+            }
+          },
+          {
+            "name": "from_symbol",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "EUR"
+            }
+          },
+          {
+            "name": "to_symbol",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "USD"
+            }
+          },
+          {
+            "name": "interval",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": ["1min", "5min", "15min", "60min", "daily"],
+              "example": "1min"
+            }
+          },
+          {
+            "name": "apikey",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "ZR9AS5R2Q8JFGU9V"
+            }
+          },
+          {
+            "name": "outputsize",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": ["compact", "full"],
+              "default": "compact",
+              "description": "Use 'full' to retrieve up to 12 months of historical data."
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "example": {
+                    "Meta Data": {
+                      "1. Information": "FX Intraday (1min) Time Series",
+                      "2. From Symbol": "EUR",
+                      "3. To Symbol": "USD",
+                      "4. Last Refreshed": "2023-09-24 18:59:00",
+                      "5. Interval": "1min",
+                      "6. Output Size": "Compact",
+                      "7. Time Zone": "UTC"
+                    },
+                    "Time Series FX (1min)": {
+                      "2023-09-24 18:59:00": {
+                        "1. open": "1.0654",
+                        "2. high": "1.0656",
+                        "3. low": "1.0653",
+                        "4. close": "1.0655"
+                      },
+                      "2023-09-24 18:58:00": {
+                        "1. open": "1.0652",
+                        "2. high": "1.0654",
+                        "3. low": "1.0651",
+                        "4. close": "1.0653"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid request parameters."
+          }
+        }
+      }
+    }
+  },
+  "components": {}
+}
