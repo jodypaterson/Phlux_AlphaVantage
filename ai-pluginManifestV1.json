@@ -8,7 +8,7 @@
     "type": "apikey",
     "authorization_url": "https://www.alphavantage.co/support/#api-key",
     "apikey_url": "https://www.alphavantage.co/support/#api-key",
-    "validation_url": "https://www.alphavantage.co/query?function=FX_INTRADAY&from_symbol=EUR&to_symbol=USD&interval=1min&apikey=ZR9AS5R2Q8JFGU9V"
+    "validation_url": "https://www.alphavantage.co/query?function=FX_INTRADAY&from_symbol=EUR&to_symbol=USD&interval=1min&apikey=3RILX2OJWQBELFB1"
   },
   "api": {
     "type": "openapi",
